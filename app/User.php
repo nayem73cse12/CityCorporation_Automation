@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace City_Corporation_Automation;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

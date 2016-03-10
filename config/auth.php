@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => App\User::class,
+    'model' => City_Corporation_Automation\User::class,
 
     /*
     |--------------------------------------------------------------------------
