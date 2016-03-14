@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/notice',['as'=>'noticeBoard','uses'=>'noticeController@noticeBoard']);
