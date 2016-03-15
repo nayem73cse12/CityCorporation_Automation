@@ -93,9 +93,9 @@ class noticeController extends Controller
         return view('notice')->with('data',$data);
     }
 
-     public function noticeDetails()
+     public function noticeDetails($tender_id)
     {
-        $data=noticeModel::all();
-        return view('notice')->with('data',$data);
+        $data=noticeModel::find($tender_id);
+        return view('noticeDetails')->with('data',$data);
     }
 }

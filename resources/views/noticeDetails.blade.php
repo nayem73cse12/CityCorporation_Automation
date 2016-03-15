@@ -6,18 +6,42 @@
 	<div class="row">
 		<div class="col-md-10">
 			
-			<h4>Tender Details Page</h4>
-			
-			<table class="table">
-			<tr>
-			    <td>SL</td>
-				<td>Tender Title</td>
-				<td>Last Date</td>
-				<td>Action</td>
-			</tr>
+    <legend>Tender Details </legend>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Tender ID:</label>
+      <div class="col-lg-10">
+        <p>{{$data->tender_id}}</p>
+      </div>
+    </div>
 
-                
-			</table>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Title:</label>
+      <div class="col-lg-10">
+        <p>{{$data->tender_title}}</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Category:</label>
+      <div class="col-lg-10">
+        <p>{{$data->tender_category}}</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Last Issue Date:</label>
+      <div class="col-lg-10">
+        <p>{{$data->tender_lastIssueDate}}</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Tender Details:</label>
+      <div class="col-lg-10">
+        <p>{{$data->tender_description}}</p>
+      </div>
+    </div>
+
 		</div>
 	</div>
 </div>

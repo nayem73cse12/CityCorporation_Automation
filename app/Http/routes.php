@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/notice',['as'=>'noticeBoard','uses'=>'noticeController@noticeBoard']);
+Route::get('/{id}/noticeDetails',['as'=>'noticeDetails','uses'=>'noticeController@noticeDetails']);

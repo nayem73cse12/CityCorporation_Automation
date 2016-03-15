@@ -23,7 +23,7 @@
             <td>{{$row->tender_title}}</td>
             <td>{{$row->tender_lastIssueDate}}</td>
             <td>
-            	<a href="" class="btn btn-success">Details</a>
+            	<a href="{{route('noticeDetails', $row->tender_id) }}" class="btn btn-success">Details</a>
             	<a href="" class="btn btn-danger">Apply</a>
             </td>
             </tr>
