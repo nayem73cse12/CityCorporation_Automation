@@ -17,3 +17,7 @@ Route::get('/', function () {
 
 Route::get('/notice',['as'=>'noticeBoard','uses'=>'noticeController@noticeBoard']);
 Route::get('/{id}/noticeDetails',['as'=>'noticeDetails','uses'=>'noticeController@noticeDetails']);
+
+Route::get('/addNotice',['as'=>'addNotice','uses'=>'noticeController@addNotice']);
+Route::post('/addNotice',['as'=>'storeNotice','uses'=>'noticeController@storeNotice']);
+Route::get('/adminPage',['as'=>'adminPage','uses'=>'noticeController@adminNoticeBoard']);
