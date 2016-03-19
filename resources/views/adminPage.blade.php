@@ -35,6 +35,6 @@
       </table>
     </div>
            <a href="{{route('addNotice')}}" class="btn btn-success">Add New</a>
-            <a href="" class="btn btn-danger">Log Out</a>
+            <a href="{{route('logout')}}" class="btn btn-danger">Log Out</a>
   </div>
 @endsection

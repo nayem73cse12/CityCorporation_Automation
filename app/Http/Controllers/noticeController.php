@@ -9,14 +9,20 @@ use City_Corporation_Automation\Http\Controllers\Controller;
 
 use City_Corporation_Automation\noticeModel;
 
+use Auth;
+
 use Input;
 
 class noticeController extends Controller
 {
     public function adminNoticeBoard()
     {
-        $data=noticeModel::all();
+        if (Auth::check()) {
+         $data=noticeModel::all();
         return view('adminPage')->with('data',$data);
+        }
+        else
+            return redirect ('auth/login');
     }
 
 
