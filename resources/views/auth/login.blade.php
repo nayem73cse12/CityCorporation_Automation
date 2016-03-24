@@ -1,92 +1,177 @@
 
-
 <!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Bootstrap Snippet: Login Form</title>
-    
-    	{!! Html::style('bootstrap/css/bootstrap.min.css') !!}
+<html>
 
-	{!! Html::script('bootstrap/js/jquery.js') !!}
-    
-    <style type="text/css">
-     body {
-  background: #eee !important;
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Sylhet city corporation</title>
+
+    <style>
+@import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+body{
+  margin: 0;
+  padding: 0;
+  background: #fff;
+
+  color: #fff;
+  font-family: Arial;
+  font-size: 12px;
 }
 
-.wrapper {
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-
-.form-signin {
-  max-width: 380px;
-  padding: 15px 35px 45px;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
-  margin-bottom: 30px;
-  color: black;
-}
-
-
-
-.form-signin .checkbox {
-  font-weight: normal;
-  margin-left: 20px;
-}
-.form-signin .form-control {
-  position: relative;
-  font-size: 16px;
+.body{
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -40px;
+  bottom: -40px;
+  width: auto;
   height: auto;
-  padding: 10px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  background-image: url(http://localhost/CityCorporation_Automation/public/s_image.jpg);
+  background-size: cover;
+  -webkit-filter: blur(5px);
+  z-index: 0;
 }
-.form-signin .form-control:focus {
+
+.grad{
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -40px;
+  bottom: -40px;
+  width: auto;
+  height: auto;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.header{
+  position: absolute;
+  top: calc(50% - 35px);
+  left: calc(50% - 255px);
   z-index: 2;
 }
-.form-signin input[type="text"] {
-  margin-bottom: -1px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.form-signin input[type="password"] {
-  margin-bottom: 20px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+
+.header div{
+  float: left;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 35px;
+  font-weight: 200;
 }
 
-    </style>
+.header div span{
+  color: #5379fa !important;
+}
 
-    
-    
-    
-  </head>
+.login{
+  position: absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 50px);
+  height: 150px;
+  width: 350px;
+  padding: 10px;
+  z-index: 2;
+}
 
-  <body>
+.login input[type=text]{
+  width: 250px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 4px;
+}
 
-      <div class="wrapper">
-    <form class="form-signin" method="POST" action="{{route('postLogin')}}">
-    {!! csrf_field() !!}      
-      <h2 class="form-signin-heading">Please login</h2>
-      <input type="text" class="form-control" name="email" placeholder="Email Address" required="" autofocus="" />
-      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
-      <label class="checkbox">
-        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
-      </label>
-      <button class="btn btn-lg btn-info btn-block" type="submit">Login</button>   
-    </form>
-  </div>
-    
-    
-    
-    
-    
-  </body>
+.login input[type=password]{
+  width: 250px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 4px;
+  margin-top: 10px;
+}
+
+.login input[type=submit]{
+  width: 260px;
+  height: 35px;
+  background: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+  border-radius: 2px;
+  color: #a18d6c;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 6px;
+  margin-top: 10px;
+}
+
+.login input[type=submit]:hover{
+  opacity: 0.8;
+}
+
+.login input[type=submit]:active{
+  opacity: 0.6;
+}
+
+.login input[type=text]:focus{
+  outline: none;
+  border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=password]:focus{
+  outline: none;
+  border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=submit]:focus{
+  outline: none;
+}
+
+::-webkit-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+::-moz-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+</style>
+
+    <script src="js/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+<form class="form-signin" method="POST" action="{{route('postLogin')}}">
+    {!! csrf_field() !!}   
+  <div class="body"></div>
+    <div class="grad"></div>
+    <div class="header">
+      <div>Admin<span>Login</span></div>
+    </div>
+    <br>
+    <div class="login">
+        <input type="text" placeholder="email" name="email"><br>
+        <input type="password" placeholder="password" name="password"><br>
+        <input type="submit" value="Login">
+    </div>
+
+</form>
+
+</body>
+
 </html>

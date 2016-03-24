@@ -17,6 +17,10 @@
                 display: table;
                 font-weight: 100;
                 font-family: 'Lato';
+                background-image: url('http://localhost/CityCorporation_Automation/public/Image/sylhet_city.jpg');
+                background-size: cover;
+                -webkit-filter: blur(5px);
+                z-index: 0;
             }
 
             .container {
@@ -32,6 +36,8 @@
 
             .title {
                 font-size: 96px;
+                
+                font-weight: 3px;
             }
         </style>
     </head>
