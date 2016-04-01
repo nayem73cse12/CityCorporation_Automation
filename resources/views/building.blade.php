@@ -13,7 +13,8 @@ body, html {
     font-family: Verdana,Arial, Helvetica, sans-serif;
     height: 100%;
     background-color: #f0f0f0;
-    margin:10px;
+    background-image: url('http://localhost/CityCorporation_Automation/public/Image/TeaGarden (2).jpg');
+    
 }
 body {
     font-size: 70%;

@@ -34,14 +34,24 @@ Route::get('auth/logout', ['as'=>'logout', 'uses'=>'Auth\AuthController@getLogou
 Route::get('auth/register',['as'=>'getRegister', 'uses'=>'Auth\AuthController@getRegister']);
 Route::post('auth/register',['as'=>'postRegister', 'uses'=>'Auth\AuthController@postRegister']);
 
-Route::get('/apply',['as'=>'tenderApplyPage','uses'=>'tenderController@index']);
+Route::get('/{id}/apply',['as'=>'tenderApplyPage','uses'=>'tenderController@index']);
 
 Route::post('/apply',['as'=>'tenderApplyComplete','uses'=>'tenderController@applystore']);
 
-Route::get('/applyView',['as'=>'submittedApplications','uses'=>'tenderController@show']);
+Route::get('/{id}/applyView',['as'=>'submittedApplications','uses'=>'tenderController@show']);
 
 Route::get('/{id}/applyDetails',['as'=>'applyDetails','uses'=>'tenderController@applyDetails']);
 
-Route::get('/building',['as'=>'building','uses'=>'buildingController@form']);
+Route::get('/building',['as'=>'buildingForm','uses'=>'buildingController@form']);
 
-Route::post('/building',['as'=>'buildingApply','uses'=>'buildingController@applicationSubmission']);
+Route::post('/building',['as'=>'buildingApply','uses'=>'buildingController@applicationSubmitted']);
+
+Route::get('/{id}/noticeEdit',['as'=>'noticeEdit','uses'=>'noticeController@noticeEdit']);
+
+Route::post('/{id}/noticeEdit',['as'=>'noticeUpdate','uses'=>'noticeController@noticeUpdate']);
+
+Route::get('/{id}/dalete',['as'=>'deleteNotice','uses'=>'noticeController@destroy']);
+
+Route::get('/buildingSubbmission',['as'=>'buildingSubbmission','uses'=>'buildingController@applicationSubmitted']);
+
+Route::get('/{id}/buildingDetails',['as'=>'buildingDetails','uses'=>'buildingController@details']);

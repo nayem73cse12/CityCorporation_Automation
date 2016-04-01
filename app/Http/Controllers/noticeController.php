@@ -8,6 +8,7 @@ use City_Corporation_Automation\Http\Requests;
 use City_Corporation_Automation\Http\Controllers\Controller;
 
 use City_Corporation_Automation\noticeModel;
+use City_Corporation_Automation\applyModel;
 
 use Auth;
 
@@ -48,7 +49,7 @@ class noticeController extends Controller
        $response=noticeModel::create($data);
        if($response){
            $data=noticeModel::all();
-           return view('adminPage')->with('data',$data);
+           return redirect('/adminPage')->with('data',$data);
        }
     }
 
@@ -65,4 +66,38 @@ class noticeController extends Controller
         $data=noticeModel::find($tender_id);
         return view('noticeDetails')->with('data',$data);
     }
+    
+    public function noticeEdit($tender_id)
+    {
+        $data=noticeModel::find($tender_id);
+        return view('editNotice')->with('data',$data);
+    }
+
+    public function noticeUpdate($tender_id)
+    {
+        $data=[
+            
+        'tender_title'=>Input::get('tenderTitle'),
+        'tender_category'=>Input::get('tenderCategory'),
+        'tender_createdDate'=>Input::get('createdDate'),
+        'tender_lastIssueDate'=>Input::get('lastIssueDate'),
+        'tender_description'=>Input::get('tanderDetails')
+
+            ];
+ 
+       $response=noticeModel::find($tender_id)->update($data);
+       if($response){
+           $data=noticeModel::all();
+           return redirect('/adminPage')->with('data',$data);
+       }
+    }
+
+    public function destroy($tender_id)
+    {
+        $response=noticeModel::find($tender_id)->delete();
+        if($response){
+            return redirect('/adminPage');
+        }
+    }
+
 }

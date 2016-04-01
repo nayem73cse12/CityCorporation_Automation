@@ -6,12 +6,15 @@
 	<div class="row">
 		<div class="col-md-10">
 			
-			<h4>Submitted applications</h4>
+			<h4>Submitted Applications for Building Construction</h4>
 			
 			<table class="table">
 			<tr>
 			    <td>SL</td>
-				<td>Applied Company</td>
+				<td>Name</td>
+				<td>Location</td>
+				<td>Submitted Date</td>
+				<td>Status</td>
 				<td>Action</td>
 			</tr>
 
@@ -19,9 +22,12 @@
 			@foreach($data as $row)
 			<tr>
             <td>{{$i++}}</td>
-            <td>{{$row->company_name}}</td>
+            <td>{{$row->name}}</td>
+            <td>{{$row->location}}</td>
+            <td>{{$row->created_at}}</td>
+            <td>{{$row->status}}</td>
             <td>
-            	<a href="{{route('applyDetails', $row->apply_id)}}" class="btn btn-success">Details</a>
+            	<a href="{{route('buildingDetails', $row->apply_id)}}" class="btn btn-success">Details</a>
             	
             </td>
             </tr>

@@ -67,9 +67,10 @@ class buildingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function applicationSubmitted()
     {
-        //
+        $data=buildingModel::all();
+        return view('buildingSubmissions')->with('data',$data);
     }
 
     /**
@@ -78,9 +79,10 @@ class buildingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function details($apply_id)
     {
-        //
+        $data=buildingModel::find($apply_id);
+        return view('buildingDetails')->with('data',$data);
     }
 
     /**

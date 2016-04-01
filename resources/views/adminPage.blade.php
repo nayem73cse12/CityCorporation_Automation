@@ -25,8 +25,9 @@
             <td>{{$row->tender_lastIssueDate}}</td>
             <td>
               <a href="{{route('noticeDetails', $row->tender_id) }}" class="btn btn-success">Details</a>
-              <a href="" class="btn btn-warning">Edit</a>
-              <a href="" class="btn btn-danger">Delete</a>
+              <a href="{{route('noticeEdit', $row->tender_id) }}" class="btn btn-warning">Edit</a>
+              <a href="{{route('deleteNotice',$row->tender_id)}}" class="btn btn-danger">Delete</a>
+              <a href="{{route('submittedApplications', $row->tender_id) }}" class="btn btn-primary">Submissions</a>
             </td>
             </tr>
 
@@ -34,7 +35,7 @@
       
       </table>
     </div>
-           <a href="{{route('addNotice')}}" class="btn btn-success">Add New</a>
-            <a href="{{route('logout')}}" class="btn btn-danger">Log Out</a>
+           <a href="{{route('addNotice')}}" class="btn btn-default">Add New</a>
+            <a href="{{route('logout')}}" class="btn btn-default">Log Out</a>
   </div>
 @endsection

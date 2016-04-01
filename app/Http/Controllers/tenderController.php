@@ -19,9 +19,9 @@ class tenderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('apply');
+        return view('apply')->with('id',$id);
     }
 
     /**
@@ -56,7 +56,7 @@ class tenderController extends Controller
        $response=applyModel::create($data);
        if($response){
            $data=noticeModel::all();
-           return view('notice')->with('data',$data);
+           return redirect('/notice')->with('data',$data);
        }
     }
 
@@ -66,9 +66,10 @@ class tenderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-          $data=applyModel::all();
+          $data1=applyModel::orderBy('tender_id');
+          $data=$data1->Where('tender_id','LIKE',$id)->get();
         return view('applyView')->with('data',$data);
     }
 
