@@ -51,7 +51,7 @@
             </div>
             <br>
             <a href="{{route('noticeBoard')}}" class="btn btn-primary">Tender Notice Site</a>
-            <a href="{{route('buildingForm')}}" class="btn btn-primary">Building Apply Form</a>
+            <a href="http://localhost/Step_by_step_approving_system/public/" class="btn btn-primary">Building Apply Form</a>
             <a href="{{route('adminPage')}}" class="btn btn-primary">Admin Log In Page</a>
      </div>
     </body>
